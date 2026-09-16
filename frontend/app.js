@@ -11,6 +11,7 @@ const menuBtn = document.querySelector('#menuBtn');
 const closeSidebar = document.querySelector('#closeSidebar');
 const newChatBtn = document.querySelector('#newChatBtn');
 const suggestions = document.querySelector('#suggestions');
+const actionBar = document.querySelector('#actionBar');
 
 let history = [];
 let messageCount = 0;
@@ -222,6 +223,15 @@ if (suggestions) {
         updateCharCount();
         input.focus();
       }
+    });
+  });
+}
+
+if (actionBar) {
+  actionBar.querySelectorAll('.action-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const action = btn.getAttribute('data-action');
+      sendCodeAction(action);
     });
   });
 }
