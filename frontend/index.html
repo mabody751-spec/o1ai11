@@ -22,7 +22,7 @@
         <div class="logo">o</div>
         <div class="logo-text">
           <h2>o1ai</h2>
-          <span class="badge">V3</span>
+          <span class="badge">V4</span>
         </div>
       </div>
       <button class="close-sidebar" id="closeSidebar" aria-label="إغلاق القائمة">
@@ -89,8 +89,8 @@
       </ul>
     </div>
 
-    <footer class="sidebar-footer">
-      <span>o1ai V3</span>
+<footer class="sidebar-footer">
+      <span>o1ai V4</span>
       <span class="dot">•</span>
       <span>AI Platform</span>
     </footer>
@@ -153,6 +153,27 @@
     </div>
 
     <div class="input-area">
+      <div class="action-bar" id="actionBar">
+        <button class="action-btn" data-action="explain" title="شرح الكود">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          شرح
+        </button>
+        <button class="action-btn" data-action="detect-bugs" title="اكتشاف الأخطاء">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10.29 3.86L11.71 3.86"><line x1="10.29" y1="3.86" x2="11.71" y2="3.86"/></path></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14.7 6.3a1 1 0 1 0 0-1.4 1 1 0 0 0 0 1.4z"/><path d="M3 12l2-2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7l2-5"/></svg>
+          أخطاء
+        </button>
+        <button class="action-btn" data-action="format" title="تنسيق الكود">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/></svg>
+          تنسيق
+        </button>
+        <button class="action-btn" data-action="test" title="كتابة اختبارات">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><line x1="22" y1="4" x2="12" y2="14.01"/><line x1="16.5" y1="4.5" x2="12.83" y2="8.17"/>
+          </svg>
+          اختبارات
+        </button>
+      </div>
+      <div class="input-wrap">
       <div class="input-wrap">
         <textarea id="input" rows="1" placeholder="اسأل سؤالاً أو الصق كوداً برمجياً..." maxlength="4000"></textarea>
         <button class="send-btn" id="sendBtn" aria-label="إرسال">
