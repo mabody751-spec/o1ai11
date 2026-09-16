@@ -23,17 +23,17 @@ function escapeHtml(text) {
 
 function detectCodeLanguage(text) {
   const patterns = {
-    python: [r'\bdef\s+\w+\s*\(', r'\bimport\s+\w+', r'\bfrom\s+\w+\s+import', r'\bself\.\w+', r'@\w+\s*\(', r'\bprint\s*\('],
-    javascript: [r'\bconst\s+\w+\s*=', r'\bfunction\s+\w+\s*\(', r'=>\s*\{', r'\.then\s*\(', r'console\.log'],
+    python: [r'\bdef\s+\w+\s*\(', r'\bimport\s+\w+', r'\bfrom\s+\w+\s+import', r'\bself\.\w+', r'@\w+\s*\(', r'\bprint\s*\(', r'\bclass\s+\w+'],
+    javascript: [r'\bconst\s+\w+\s*=', r'\bfunction\s+\w+\s*\(', r'=>\s*\{', r'\.then\s*\(', r'console\.log', r'\bvar\s+\w+\s*='],
     html: [r'<\w+[^>]*>', r'</\w+>', r'<!DOCTYPE'],
-    css: [r'\.\w+\s*\{', r'@media', r'@keyframes'],
-    sql: [r'\bSELECT\b', r'\bINSERT\s+INTO\b', r'\bCREATE\s+TABLE\b', r'\bJOIN\b'],
-    bash: [r'#!\s*/bin', r'\$\(', r'\becho\b'],
-    java: [r'\bpublic\s+(static\s+)?class\b', r'\bSystem\.out\.print'],
-    cpp: [r'#include\s*<', r'cout\s*<<', r'std::'],
-    go: [r'\bfunc\s+\w+\s*\(', r'\bpackage\s+\w+', r'fmt\.Print'],
-    rust: [r'\bfn\s+\w+\s*\(', r'\blet\s+mut\s+', r'println!\s*\('],
-    typescript: [r':\s*(string|number|boolean|any)\b', r'interface\s+\w+'],
+    css: [r'\.\w+\s*\{', r'@media', r'@keyframes', r'display\s*:'],
+    sql: [r'\bSELECT\b', r'\bINSERT\s+INTO\b', r'\bCREATE\s+TABLE\b', r'\bJOIN\b', r'\bWHERE\b'],
+    bash: [r'#!\s*/bin', r'\$\(', r'\becho\b', r'\bgrep\b'],
+    java: [r'\bpublic\s+(static\s+)?class\b', r'\bSystem\.out\.print', r'import\s+java\.'],
+    cpp: [r'#include\s*<', r'cout\s*<<', r'std::', r'class\s+\w+\s*:'],
+    go: [r'\bfunc\s+\w+\s*\(', r'\bpackage\s+\w+', r'fmt\.Print', r':=\s*'],
+    rust: [r'\bfn\s+\w+\s*\(', r'\blet\s+mut\s+', r'println!\s*\(', r'\bimpl\s+\w+'],
+    typescript: [r':\s*(string|number|boolean|any)\b', r'interface\s+\w+', r'type\s+\w+\s*='],
   };
   const scores = {};
   for (const [lang, pats] of Object.entries(patterns)) {
@@ -51,8 +51,8 @@ function detectCodeLanguage(text) {
 
 function formatMessage(text) {
   let html = escapeHtml(text);
-
   const codeBlocks = [];
+
   html = html.replace(/```(\w*)\n([\s\S]*?)```/g, (match, lang, code) => {
     const id = `cb-${codeBlocks.length}`;
     codeBlocks.push({ lang: lang || 'text', code: code.trim(), id });
@@ -60,10 +60,8 @@ function formatMessage(text) {
   });
 
   html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
-
   html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
   html = html.replace(/\*(.+?)\*/g, '<em>$1</em>');
-
   html = html.replace(/\n/g, '<br>');
 
   setTimeout(() => {
