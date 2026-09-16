@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>o1ai — ذكاء اصطناعي للمحادثة والبرمجة</title>
+<link rel="stylesheet" href="/styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="logo-wrap">
+        <div class="logo">o</div>
+        <div>
+          <h2>o1ai</h2>
+          <span>V1</span>
+        </div>
+      </div>
+      <button class="close-sidebar" id="closeSidebar" aria-label="إغلاق القائمة">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="sidebar-section">
+      <h3>المحادثات</h3>
+      <ul class="chat-list" id="chatList">
+        <li class="chat-item active" data-chat="new">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <span>محادثة جديدة</span>
+        </li>
+      </ul>
+      <button class="new-chat-btn" id="newChatBtn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        محادثة جديدة
+      </button>
+    </div>
+    <div class="sidebar-section">
+      <h3>النموذج</h3>
+      <div class="model-card">
+        <div class="model-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4m0 14v4M4.22 4.22l2.83 2.83m9.9 9.9l2.83 2.83M1 12h4m14 0h4M4.22 19.78l2.83-2.83m9.9-9.9l2.83-2.83"/></svg>
+        </div>
+        <div class="model-info">
+          <span class="model-name">o1ai-Coder</span>
+          <span class="model-status">محادثة + برمجة</span>
+        </div>
+      </div>
+    </div>
+    <div class="sidebar-section">
+      <h3>القدرات</h3>
+      <ul class="asset-list">
+        <li>محادثة ذكية</li>
+        <li>كتابة أكواد برمجية</li>
+        <li>شرح المفاهيم البرمجية</li>
+        <li>تصحيح الأخطاء البرمجية</li>
+      </ul>
+    </div>
+    <footer class="sidebar-footer">
+      <span>o1ai V1</span>
+      <span class="dot">•</span>
+      <span>AI Platform</span>
+    </footer>
+  </aside>
+
+  <div class="overlay" id="overlay"></div>
+
+  <main class="chat-area">
+    <header class="topbar">
+      <button class="menu-btn" id="menuBtn" aria-label="فتح القائمة">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <div class="topbar-title">
+        <h1>o1ai</h1>
+        <span class="topbar-sub">ذكاء اصطناعي للمحادثة والبرمجة</span>
+      </div>
+      <div class="topbar-status">
+        <span class="status-dot"></span>
+        <span id="statusText">جاهز</span>
+      </div>
+    </header>
+
+    <div class="messages" id="messages">
+      <div class="welcome" id="welcome">
+        <div class="welcome-logo">
+          <div class="logo lg">o</div>
+        </div>
+        <h2>مرحباً بك في o1ai</h2>
+        <p>اسأل أي سؤال أو اطلب مساعدة في البرمجة</p>
+        <div class="suggestions" id="suggestions">
+          <button class="suggestion" data-text="اكتب لي دالة ترتيب بايثون">اكتب لي دالة ترتيب بايثون</button>
+          <button class="suggestion" data-text="اشرح لي الفرق بين async و await">اشرح لي الفرق بين async و await</button>
+          <button class="suggestion" data-text="كيف أصلح خطأ 404 في React؟">كيف أصلح خطأ 404 في React؟</button>
+          <button class="suggestion" data-text="اكتب لي API REST بـ Node.js">اكتب لي API REST بـ Node.js</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="typing-indicator" id="typingIndicator">
+      <div class="typing-dots">
+        <span></span><span></span><span></span>
+      </div>
+      <span>o1ai يفكر...</span>
+    </div>
+
+    <div class="input-area">
+      <div class="input-wrap">
+        <textarea id="input" rows="1" placeholder="اسأل سؤالاً أو اطلب كوداً برمجياً..." maxlength="4000"></textarea>
+        <button class="send-btn" id="sendBtn" aria-label="إرسال">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </button>
+      </div>
+      <div class="input-footer">
+        <span class="hint">Enter للإرسال • Shift+Enter لسطر جديد</span>
+        <span class="char-count" id="charCount">0 / 4000</span>
+      </div>
+    </div>
+  </main>
+</div>
+<script src="/app.js"></script>
+</body>
+</html>
