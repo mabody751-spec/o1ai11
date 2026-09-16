@@ -10,25 +10,34 @@
 </head>
 <body>
 <div class="app">
+  <div class="bg-orbs" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
   <aside class="sidebar" id="sidebar">
     <div class="sidebar-header">
       <div class="logo-wrap">
         <div class="logo">o</div>
-        <div>
+        <div class="logo-text">
           <h2>o1ai</h2>
-          <span>V2</span>
+          <span class="badge">V3</span>
         </div>
       </div>
       <button class="close-sidebar" id="closeSidebar" aria-label="إغلاق القائمة">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
       </button>
     </div>
+
     <div class="sidebar-section">
       <h3>المحادثات</h3>
       <ul class="chat-list" id="chatList">
         <li class="chat-item active" data-chat="new">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-          <span>محادثة جديدة</span>
+          <span class="chat-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </span>
+          <span class="chat-label">محادثة جديدة</span>
         </li>
       </ul>
       <button class="new-chat-btn" id="newChatBtn">
@@ -36,6 +45,7 @@
         محادثة جديدة
       </button>
     </div>
+
     <div class="sidebar-section">
       <h3>النموذج</h3>
       <div class="model-card">
@@ -44,41 +54,43 @@
         </div>
         <div class="model-info">
           <span class="model-name">o1ai-Coder</span>
-          <span class="model-status">محادثة + برمجة</span>
+          <span class="model-status"><span class="status-pulse"></span>متاح</span>
         </div>
       </div>
     </div>
+
     <div class="sidebar-section">
       <h3>القدرات</h3>
       <ul class="capability-list">
         <li>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
-          محادثة ذكية
+          <span class="cap-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span>محادثة ذكية</span>
         </li>
         <li>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
-          كتابة أكواد
+          <span class="cap-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span>كتابة أكواد</span>
         </li>
         <li>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
-          شرح الكود
+          <span class="cap-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span>شرح الكود</span>
         </li>
         <li>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
-          تصحيح أخطاء
+          <span class="cap-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span>تصحيح أخطاء</span>
         </li>
         <li>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
-          تنسيق كود
+          <span class="cap-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span>تنسيق كود</span>
         </li>
         <li>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
-          مراجعة كود
+          <span class="cap-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span>مراجعة كود</span>
         </li>
       </ul>
     </div>
+
     <footer class="sidebar-footer">
-      <span>o1ai V2</span>
+      <span>o1ai V3</span>
       <span class="dot">•</span>
       <span>AI Platform</span>
     </footer>
@@ -95,24 +107,40 @@
         <h1>o1ai</h1>
         <span class="topbar-sub">ذكاء اصطناعي للمحادثة والبرمجة</span>
       </div>
-      <div class="topbar-status">
-        <span class="status-dot"></span>
-        <span id="statusText">جاهز</span>
+      <div class="topbar-actions">
+        <div class="topbar-status">
+          <span class="status-dot"></span>
+          <span id="statusText">جاهز</span>
+        </div>
       </div>
     </header>
 
     <div class="messages" id="messages">
       <div class="welcome" id="welcome">
-        <div class="welcome-logo">
-          <div class="logo lg">o</div>
+        <div class="welcome-hero">
+          <div class="welcome-logo">
+            <div class="logo lg">o</div>
+          </div>
+          <h2>مرحباً بك في o1ai</h2>
+          <p class="welcome-desc">اسأل أي سؤال أو اطلب مساعدة في البرمجة</p>
         </div>
-        <h2>مرحباً بك في o1ai</h2>
-        <p>اسأل أي سؤال أو اطلب مساعدة في البرمجة</p>
         <div class="suggestions" id="suggestions">
-          <button class="suggestion" data-text="اكتب لي دالة ترتيب بايثون">✍️ كتابة كود بايثون</button>
-          <button class="suggestion" data-text="اشرح لي الفرق بين async و await">📖 شرح مفهوم برمجي</button>
-          <button class="suggestion" data-text="كيف أصلح خطأ 404 في React؟">🐛 تصحيح أخطاء</button>
-          <button class="suggestion" data-text="اكتب لي API REST بـ Node.js">🏗️ تصميم API</button>
+          <button class="suggestion" data-text="اكتب لي دالة ترتيب بايثون">
+            <span class="sug-icon">✍️</span>
+            <span class="sug-text">كتابة كود بايثون</span>
+          </button>
+          <button class="suggestion" data-text="اشرح لي الفرق بين async و await">
+            <span class="sug-icon">📖</span>
+            <span class="sug-text">شرح مفهوم برمجي</span>
+          </button>
+          <button class="suggestion" data-text="كيف أصلح خطأ 404 في React؟">
+            <span class="sug-icon">🐛</span>
+            <span class="sug-text">تصحيح أخطاء</span>
+          </button>
+          <button class="suggestion" data-text="اكتب لي API REST بـ Node.js">
+            <span class="sug-icon">🏗️</span>
+            <span class="sug-text">تصميم API</span>
+          </button>
         </div>
       </div>
     </div>
