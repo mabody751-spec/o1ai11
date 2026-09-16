@@ -503,6 +503,41 @@ body {
   30% { transform: translateY(-6px); opacity: 1; }
 }
 
+/* ===== ACTION BAR ===== */
+.action-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px 0;
+  flex-wrap: wrap;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.action-btn:hover {
+  background: rgba(91, 92, 255, 0.1);
+  border-color: rgba(91, 92, 255, 0.2);
+  color: var(--accent-1);
+}
+
+.action-btn svg {
+  flex-shrink: 0;
+}
+
 /* ===== INPUT AREA ===== */
 .input-area { padding: 16px 24px 20px; flex-shrink: 0; }
 
