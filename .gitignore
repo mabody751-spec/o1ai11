@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+ai/assets/*.ort
+ai/assets/*.bin
+ai/assets/*.smpl
+!ai/assets/README.md
