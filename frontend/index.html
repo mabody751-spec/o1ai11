@@ -6,7 +6,7 @@
 <title>o1ai — ذكاء اصطناعي للمحادثة والبرمجة</title>
 <link rel="stylesheet" href="/styles.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 <div class="app">
@@ -16,7 +16,7 @@
         <div class="logo">o</div>
         <div>
           <h2>o1ai</h2>
-          <span>V1</span>
+          <span>V2</span>
         </div>
       </div>
       <button class="close-sidebar" id="closeSidebar" aria-label="إغلاق القائمة">
@@ -50,15 +50,35 @@
     </div>
     <div class="sidebar-section">
       <h3>القدرات</h3>
-      <ul class="asset-list">
-        <li>محادثة ذكية</li>
-        <li>كتابة أكواد برمجية</li>
-        <li>شرح المفاهيم البرمجية</li>
-        <li>تصحيح الأخطاء البرمجية</li>
+      <ul class="capability-list">
+        <li>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+          محادثة ذكية
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+          كتابة أكواد
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+          شرح الكود
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+          تصحيح أخطاء
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+          تنسيق كود
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+          مراجعة كود
+        </li>
       </ul>
     </div>
     <footer class="sidebar-footer">
-      <span>o1ai V1</span>
+      <span>o1ai V2</span>
       <span class="dot">•</span>
       <span>AI Platform</span>
     </footer>
@@ -89,10 +109,10 @@
         <h2>مرحباً بك في o1ai</h2>
         <p>اسأل أي سؤال أو اطلب مساعدة في البرمجة</p>
         <div class="suggestions" id="suggestions">
-          <button class="suggestion" data-text="اكتب لي دالة ترتيب بايثون">اكتب لي دالة ترتيب بايثون</button>
-          <button class="suggestion" data-text="اشرح لي الفرق بين async و await">اشرح لي الفرق بين async و await</button>
-          <button class="suggestion" data-text="كيف أصلح خطأ 404 في React؟">كيف أصلح خطأ 404 في React؟</button>
-          <button class="suggestion" data-text="اكتب لي API REST بـ Node.js">اكتب لي API REST بـ Node.js</button>
+          <button class="suggestion" data-text="اكتب لي دالة ترتيب بايثون">✍️ كتابة كود بايثون</button>
+          <button class="suggestion" data-text="اشرح لي الفرق بين async و await">📖 شرح مفهوم برمجي</button>
+          <button class="suggestion" data-text="كيف أصلح خطأ 404 في React؟">🐛 تصحيح أخطاء</button>
+          <button class="suggestion" data-text="اكتب لي API REST بـ Node.js">🏗️ تصميم API</button>
         </div>
       </div>
     </div>
@@ -106,7 +126,7 @@
 
     <div class="input-area">
       <div class="input-wrap">
-        <textarea id="input" rows="1" placeholder="اسأل سؤالاً أو اطلب كوداً برمجياً..." maxlength="4000"></textarea>
+        <textarea id="input" rows="1" placeholder="اسأل سؤالاً أو الصق كوداً برمجياً..." maxlength="4000"></textarea>
         <button class="send-btn" id="sendBtn" aria-label="إرسال">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
         </button>
