@@ -24,17 +24,17 @@ function escapeHtml(text) {
 
 function detectCodeLanguage(text) {
   const patterns = {
-    python: [r'\bdef\s+\w+\s*\(', r'\bimport\s+\w+', r'\bfrom\s+\w+\s+import', r'\bself\.\w+', r'@\w+\s*\(', r'\bprint\s*\(', r'\bclass\s+\w+'],
-    javascript: [r'\bconst\s+\w+\s*=', r'\bfunction\s+\w+\s*\(', r'=>\s*\{', r'\.then\s*\(', r'console\.log', r'\bvar\s+\w+\s*='],
-    html: [r'<\w+[^>]*>', r'</\w+>', r'<!DOCTYPE'],
-    css: [r'\.\w+\s*\{', r'@media', r'@keyframes', r'display\s*:'],
-    sql: [r'\bSELECT\b', r'\bINSERT\s+INTO\b', r'\bCREATE\s+TABLE\b', r'\bJOIN\b', r'\bWHERE\b'],
-    bash: [r'#!\s*/bin', r'\$\(', r'\becho\b', r'\bgrep\b'],
-    java: [r'\bpublic\s+(static\s+)?class\b', r'\bSystem\.out\.print', r'import\s+java\.'],
-    cpp: [r'#include\s*<', r'cout\s*<<', r'std::', r'class\s+\w+\s*:'],
-    go: [r'\bfunc\s+\w+\s*\(', r'\bpackage\s+\w+', r'fmt\.Print', r':=\s*'],
-    rust: [r'\bfn\s+\w+\s*\(', r'\blet\s+mut\s+', r'println!\s*\(', r'\bimpl\s+\w+'],
-    typescript: [r':\s*(string|number|boolean|any)\b', r'interface\s+\w+', r'type\s+\w+\s*='],
+    python: ['\\bdef\\s+\\w+\\s*\\(', '\\bimport\\s+\\w+', '\\bfrom\\s+\\w+\\s+import', '\\bself\\.\\w+', '@\\w+\\s*\\(', '\\bprint\\s*\\(', '\\bclass\\s+\\w+'],
+    javascript: ['\\bconst\\s+\\w+\\s*=', '\\bfunction\\s+\\w+\\s*\\(', '=>\\s*\\{', '\\.then\\s*\\(', 'console\\.log', '\\bvar\\s+\\w+\\s*='],
+    html: ['<\\w+[^>]*>', '</\\w+>', '<!DOCTYPE'],
+    css: ['\\.\\w+\\s*\\{', '@media', '@keyframes', 'display\\s*:'],
+    sql: ['\\bSELECT\\b', '\\bINSERT\\s+INTO\\b', '\\bCREATE\\s+TABLE\\b', '\\bJOIN\\b', '\\bWHERE\\b'],
+    bash: ['#!\\s*/bin', '\\$\\(', '\\becho\\b', '\\bgrep\\b'],
+    java: ['\\bpublic\\s+(static\\s+)?class\\b', '\\bSystem\\.out\\.print', 'import\\s+java\\.\\'],
+    cpp: ['#include\\s*<', 'cout\\s*<<', 'std::', 'class\\s+\\w+\\s*:'],
+    go: ['\\bfunc\\s+\\w+\\s*\\(', '\\bpackage\\s+\\w+', 'fmt\\.Print', ':=[\\s]*'],
+    rust: ['\\bfn\\s+\\w+\\s*\\(', '\\blet\\s+mut\\s+', 'println!\\s*\\(', '\\bimpl\\s+\\w+'],
+    typescript: [':\\s*(string|number|boolean|any)\\b', 'interface\\s+\\w+', 'type\\s+\\w+\\s*='],
   };
   const scores = {};
   for (const [lang, pats] of Object.entries(patterns)) {
